@@ -44,7 +44,11 @@ export const TutorCard: React.FC<TutorCardProps> = ({ tutor, onSelect, tilt = 'a
       <p className="text-sm text-ink-dim font-mono break-all">{tutor.email}</p>
 
       <button
+<<<<<<< HEAD
         className="mt-3 self-start px-4 py-1.5 bg-ink text-paper text-sm font-medium rounded hover:bg-marker-green dark:hover:bg-chalk transition-colors"
+=======
+        className="mt-3 self-start px-4 py-1.5 bg-ink text-paper text-sm font-medium rounded hover:bg-marker-blue transition-colors"
+>>>>>>> 2d3a340683bebfcb6d08dcdbb92eb81023aaf73f
         onClick={(_e: React.MouseEvent<HTMLButtonElement>) => onSelect(tutor)}
       >
         Pick this tutor →
