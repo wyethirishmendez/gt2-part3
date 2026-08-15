@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, monospace;
+
+  /* Whiteboard (light) surfaces */
+  --color-paper: #f7f6f1;
+  --color-paper-panel: #ffffff;
+  --color-ink: #22303f;
+  --color-ink-dim: #5c6b78;
+
+  /* Chalkboard (dark) surfaces */
+  --color-board: #21362c;
+  --color-board-panel: #2b4436;
+  --color-chalk: #f2ede0;
+  --color-chalk-dim: #b9c6b6;
+
+  /* Sticky-note accents */
+  --color-sticky-blue: #cfe3ee;
+  --color-sticky-mint: #d9ecd4;
+  --color-sticky-blush: #f6dccd;
+  --color-sticky-butter: #f7e7ad;
+
+  /* Marker accents */
+  --color-marker-coral: #dd6b4e;
+  --color-marker-blue: #3d6f8e;
+  --color-marker-yellow: #d9a441;
+  --color-marker-green: #4c8462;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Corkboard / chalk-dust texture behind everything */
+.texture-board {
+  background-color: var(--color-board);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(242, 237, 224, 0.05) 0, transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(242, 237, 224, 0.04) 0, transparent 40%),
+    radial-gradient(circle at 60% 80%, rgba(242, 237, 224, 0.05) 0, transparent 50%);
+}
+
+.texture-paper {
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(circle, rgba(34, 48, 63, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Tilted sticky-note cards */
+.sticky-tilt-a { transform: rotate(-1.4deg); }
+.sticky-tilt-b { transform: rotate(1deg); }
+.sticky-tilt-c { transform: rotate(-0.6deg); }
+.sticky-tilt-a:hover, .sticky-tilt-b:hover, .sticky-tilt-c:hover {
+  transform: rotate(0deg) translateY(-3px);
+}
+
+/* Push-pin dot */
+.push-pin {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.35), inset 0 -2px 2px rgba(0,0,0,0.15), inset 0 2px 2px rgba(255,255,255,0.4);
+}
+
+/* Hall-pass ticket perforation */
+.ticket-perforation {
+  background-image: radial-gradient(circle, var(--_perf-bg, var(--color-paper)) 4px, transparent 4.5px);
+  background-size: 14px 14px;
+  background-position: center;
+}
+
+/* Chalk dashed rule */
+.chalk-rule {
+  border-top: 2px dashed rgba(242, 237, 224, 0.35);
+}
+.paper-rule {
+  border-top: 2px dashed rgba(34, 48, 63, 0.2);
+}
+
+/* Spiral notebook edge */
+.notebook-spiral {
+  background-image: radial-gradient(circle, rgba(34,48,63,0.35) 3px, transparent 3.5px);
+  background-size: 18px 18px;
+  background-position: left center;
+  background-repeat: repeat-y;
+}
+.dark .notebook-spiral {
+  background-image: radial-gradient(circle, rgba(242,237,224,0.3) 3px, transparent 3.5px);
+}
